@@ -8,7 +8,7 @@ import Company from '../../components/Company'
 class Column extends Component {
   render () {
     return (
-      <Grid.Column className='Column' width={8}>
+      <Grid.Column className='Column' computer={8} mobile={16} tablet={16}>
         {this.props.companies.map((company, index) => {
           return <Company company={company} key={index} />
         })}
