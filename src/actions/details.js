@@ -1,13 +1,13 @@
 export const showDetails = (companyId) => {
   return {
     payload: companyId,
-    type: 'SHOW_DETIALS'
+    type: 'SHOW_DETAILS'
   }
 }
 
-export const hideDetials = (companyId) => {
+export const hideDetails = (companyId) => {
   return {
     payload: companyId,
-    type: 'HIDE_DETIALS'
+    type: 'HIDE_DETAILS'
   }
 }

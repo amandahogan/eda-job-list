@@ -3,7 +3,10 @@ import { connect } from 'react-redux'
 import { Button, Grid, Icon, Menu } from 'semantic-ui-react'
 
 import { addColumn, removeColumn } from '../../actions/columns'
+import Details from '../../components/Details'
+
 import Column from '../Column'
+
 import './Board.css'
 
 class Board extends Component {
@@ -22,6 +25,7 @@ class Board extends Component {
             return <Column column={column} key={index} />
           })}
         </Grid.Row>
+        <Details />
       </Grid>
     )
   }
