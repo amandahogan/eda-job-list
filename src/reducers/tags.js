@@ -6,7 +6,8 @@ const initialState = [
     companies: [
       {companyId: 0},
       {companyId: 1},
-      {companyId: 2}
+      {companyId: 2},
+      {companyId: 3}
     ]
   },
   {
@@ -14,7 +15,6 @@ const initialState = [
     categoryId: 1,
     value: 'PHP',
     companies: [
-      {companyId: 3},
       {companyId: 4},
       {companyId: 5}
     ]
@@ -40,7 +40,7 @@ const initialState = [
     categoryId: 3,
     value: 'ReactJS',
     companies: [
-      {companyId: 6}
+      {companyId: 3}
     ]
   },
   {
