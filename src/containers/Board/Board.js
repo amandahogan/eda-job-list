@@ -4,7 +4,6 @@ import { Button, Grid, Icon, Menu } from 'semantic-ui-react'
 
 import { addColumn, removeColumn } from '../../actions/columns'
 import Column from '../Column'
-import Details from '../../components/Details'
 import './Board.css'
 
 class Board extends Component {
@@ -23,7 +22,6 @@ class Board extends Component {
             return <Column column={column} key={index} />
           })}
         </Grid.Row>
-        <Details />
       </Grid>
     )
   }
