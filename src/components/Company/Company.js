@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Card, Image } from 'semantic-ui-react'
 
+import Details from '../Details'
+
 import './Company.css'
 
 class Company extends Component {
@@ -18,6 +20,7 @@ class Company extends Component {
           <Card.Description>
             {this.props.company.description}
           </Card.Description>
+          <Details />
         </Card.Content>
       </Card>
     )
