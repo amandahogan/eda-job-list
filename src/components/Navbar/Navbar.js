@@ -1,0 +1,26 @@
+import React from 'react'
+import { Input, Menu } from 'semantic-ui-react'
+
+import Login from './Login'
+import Profile from './Profile'
+
+class Navbar extends React.Component {
+  render () {
+    const { login, logout, profile } = this.props
+    return (
+      <Menu>
+        <Menu.Item name='home' />
+        <Menu.Menu position='right'>
+          <Menu.Item>
+            <Input icon='search' placeholder='Search...' />
+          </Menu.Item>
+          {profile ? (
+            <Profile logout={logout} profile={profile} />
+          ) : <Login login={login} />}
+        </Menu.Menu>
+      </Menu>
+    )
+  }
+}
+
+export default Navbar
