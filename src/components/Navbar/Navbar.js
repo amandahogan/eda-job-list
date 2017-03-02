@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Input, Menu } from 'semantic-ui-react'
 
 import Login from './Login'
@@ -21,6 +21,12 @@ class Navbar extends React.Component {
       </Menu>
     )
   }
+}
+
+Navbar.propTypes = {
+  login: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
+  profile: PropTypes.object
 }
 
 export default Navbar

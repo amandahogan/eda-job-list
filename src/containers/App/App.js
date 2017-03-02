@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import { login, logout } from '../../actions/auth'
-import Navbar from '../../components/Navbar'
+import App from '../../components/App'
 
 export default connect(
   state => {
@@ -15,4 +15,4 @@ export default connect(
       logout: () => dispatch(logout())
     }
   }
-)(Navbar)
+)(App)

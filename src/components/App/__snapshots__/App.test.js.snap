@@ -1,7 +1,21 @@
-exports[`test renders without crashing 1`] = `
+exports[`<App /> login matches snapshot 1`] = `
 <div
   className="App">
-  <Connect(Navbar) />
+  <Navbar
+    login={[Function]}
+    logout={[Function]}
+    profile={Object {}} />
   <Connect(Board) />
+</div>
+`;
+
+exports[`<App /> logout matches snapshot 1`] = `
+<div
+  className="App">
+  <Navbar
+    login={[Function]}
+    logout={[Function]}
+    profile={null} />
+  <Welcome />
 </div>
 `;
