@@ -7,6 +7,16 @@ export const addColumn = () => {
   }
 }
 
+export const addIncludeTag = (columnId, tagId) => {
+  return {
+    payload: {
+      columnId,
+      tagId
+    },
+    type: 'ADD_INCLUDE_TAG'
+  }
+}
+
 export const changeSortBy = (columnId, sortBy) => {
   return {
     payload: {

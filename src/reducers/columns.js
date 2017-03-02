@@ -1,8 +1,14 @@
+const defaultColumn = {
+  include: [],
+  sortBy: 'date_created'
+}
+
 const initialState = [
-  {
-    id: 0,
-    sortBy: 'date_created'
-  }
+  Object.assign(
+    {},
+    defaultColumn,
+    {id: 0}
+  )
 ]
 
 export default (state = initialState, {payload, type}) => {
@@ -10,11 +16,28 @@ export default (state = initialState, {payload, type}) => {
     case 'ADD_COLUMN':
       return [
         ...state,
-        {
-          id: payload,
-          sortBy: 'date_created'
-        }
+        Object.assign(
+          {},
+          defaultColumn,
+          {id: payload}
+        )
       ]
+
+    case 'ADD_INCLUDE_TAG':
+      return state.map(column => {
+        if (column.id === payload.columnId) {
+          if (!column.include.includes(payload.tagId)) {
+            return Object.assign(
+              {},
+              column,
+              {
+                include: [...column.include, payload.tagId]
+              }
+            )
+          }
+        }
+        return column
+      })
 
     case 'CHANGE_SORT_BY':
       return state.map(column => {
