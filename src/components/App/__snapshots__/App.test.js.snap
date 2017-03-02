@@ -1,0 +1,23 @@
+exports[`test renders without crashing 1`] = `
+<div
+  className="App">
+  <Menu>
+    <MenuItem
+      name="home"
+      onClick={undefined} />
+    <MenuMenu
+      position="right">
+      <MenuItem>
+        <Input
+          icon="search"
+          placeholder="Search..."
+          type="text" />
+      </MenuItem>
+      <MenuItem
+        name="logout"
+        onClick={undefined} />
+    </MenuMenu>
+  </Menu>
+  <Connect(Board) />
+</div>
+`;

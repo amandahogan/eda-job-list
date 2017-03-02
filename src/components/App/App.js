@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Input, Menu } from 'semantic-ui-react'
 
 import './App.css'
-import Board from '../Board'
+import Board from '../../containers/Board'
 
 class App extends Component {
   render () {
