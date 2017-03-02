@@ -23,6 +23,22 @@ export default (state = initialState, {payload, type}) => {
         )
       ]
 
+    case 'ADD_EXCLUDE_TAG':
+      return state.map(column => {
+        if (column.id === payload.columnId) {
+          if (!column.exclude.includes(payload.tagId)) {
+            return Object.assign(
+              {},
+              column,
+              {
+                exclude: [...column.exclude, payload.tagId]
+              }
+            )
+          }
+        }
+        return column
+      })
+
     case 'ADD_INCLUDE_TAG':
       return state.map(column => {
         if (column.id === payload.columnId) {

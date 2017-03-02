@@ -7,6 +7,16 @@ export const addColumn = () => {
   }
 }
 
+export const addExcludeTag = (columnId, tagId) => {
+  return {
+    payload: {
+      columnId,
+      tagId
+    },
+    type: 'ADD_EXCLUDE_TAG'
+  }
+}
+
 export const addIncludeTag = (columnId, tagId) => {
   return {
     payload: {
