@@ -1,8 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import Company from './Company'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  ReactDOM.render(<Company />, div)
+  const company = {
+    name: 'Lightbox',
+    description: 'test'
+  }
+  ReactDOM.render(<Company company={company} />, div)
 })

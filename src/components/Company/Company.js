@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Card, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
 import './Company.css'
 
@@ -10,20 +10,14 @@ class Company extends Component {
         <Card.Content>
           <Image floated='right' size='mini' src='http://semantic-ui.com/images/avatar/large/steve.jpg' />
           <Card.Header>
-            David Christie
+            {this.props.company.name}
           </Card.Header>
           <Card.Meta>
-            Friends of Quinn
+            TimeStamp
           </Card.Meta>
           <Card.Description>
-            David wants to add you to the group <strong>best friends</strong>
+            {this.props.company.description}
           </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <div className='ui two buttons'>
-            <Button basic color='green'>Approve</Button>
-            <Button basic color='red'>Decline</Button>
-          </div>
         </Card.Content>
       </Card>
     )
