@@ -44,6 +44,16 @@ export const removeColumn = id => {
   }
 }
 
+export const removeExcludeTag = (columnId, tagId) => {
+  return {
+    payload: {
+      columnId,
+      tagId
+    },
+    type: 'REMOVE_EXCLUDE_TAG'
+  }
+}
+
 export const removeIncludeTag = (columnId, tagId) => {
   return {
     payload: {

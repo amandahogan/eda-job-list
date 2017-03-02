@@ -71,6 +71,20 @@ export default (state = initialState, {payload, type}) => {
     case 'REMOVE_COLUMN':
       return state.filter(column => column.id !== payload)
 
+    case 'REMOVE_EXCLUDE_TAG':
+      return state.map(column => {
+        if (column.id === payload.columnId) {
+          return Object.assign(
+            {},
+            column,
+            {
+              exclude: column.exclude.filter(tagId => tagId !== payload.tagId)
+            }
+          )
+        }
+        return column
+      })
+
     case 'REMOVE_INCLUDE_TAG':
       return state.map(column => {
         if (column.id === payload.columnId) {
