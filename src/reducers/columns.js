@@ -1,4 +1,5 @@
 const defaultColumn = {
+  exclude: [],
   include: [],
   sortBy: 'date_created'
 }
