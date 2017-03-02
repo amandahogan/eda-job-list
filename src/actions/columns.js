@@ -7,6 +7,16 @@ export const addColumn = () => {
   }
 }
 
+export const changeSortBy = (columnId, sortBy) => {
+  return {
+    payload: {
+      columnId,
+      sortBy
+    },
+    type: 'CHANGE_SORT_BY'
+  }
+}
+
 export const removeColumn = id => {
   return {
     payload: id,
