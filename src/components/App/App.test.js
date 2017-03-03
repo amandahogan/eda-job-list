@@ -3,6 +3,24 @@ import React from 'react'
 
 import App from './App'
 
-it('renders without crashing', () => {
-  expect(shallow(<App />).getNode()).toMatchSnapshot()
+describe('<App />', () => {
+  it('logout matches snapshot', () => {
+    const profile = null
+    const login = () => {}
+    const logout = () => {}
+    expect(
+      shallow(<App login={login} logout={logout} profile={profile} />).getNode()
+    ).toMatchSnapshot()
+  })
+})
+
+describe('<App />', () => {
+  it('login matches snapshot', () => {
+    const profile = {}
+    const login = () => {}
+    const logout = () => {}
+    expect(
+      shallow(<App login={login} logout={logout} profile={profile} />).getNode()
+    ).toMatchSnapshot()
+  })
 })

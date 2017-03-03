@@ -6,7 +6,7 @@ import './Details.css'
 class Details extends Component {
   render () {
     return (
-      <Modal trigger={<Button>Details</Button>}>
+      <Modal open={this.props.open} onClose={this.props.close} >
         <Modal.Header>Profile Picture</Modal.Header>
         <Modal.Content image>
           <Image wrapped size='medium' src='http://semantic-ui.com/images/wireframe/image.png' />
