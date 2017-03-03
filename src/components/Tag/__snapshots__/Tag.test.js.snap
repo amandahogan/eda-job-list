@@ -1,0 +1,8 @@
+exports[`<Tag /> matches snapshot 1`] = `
+<Label
+  as="a"
+  color="red"
+  tag={true}>
+  test
+</Label>
+`;

@@ -1,22 +1,16 @@
 import React, { Component } from 'react'
 import { Card, Image } from 'semantic-ui-react'
 
-import Details from '../Details'
 import './Company.css'
 
 class Company extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      showComponent: false
-    }
     this.onCardClick = this.onCardClick.bind(this)
   }
 
   onCardClick () {
-    this.setState({
-      showComponent: true
-    })
+    this.props.showDetails()
   }
 
   render () {
@@ -33,7 +27,6 @@ class Company extends Component {
           <Card.Description>
             {this.props.company.description}
           </Card.Description>
-          {this.state.showComponent ? <Details /> : null}
         </Card.Content>
       </Card>
     )
