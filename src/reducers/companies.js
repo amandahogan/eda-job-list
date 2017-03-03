@@ -39,6 +39,12 @@ const initialState = [
 
 export default (state = initialState, {payload, type}) => {
   switch (type) {
+    case 'ADD_COMPANY':
+      return [...state, payload]
+
+    case 'REMOVE_COMPANY':
+      return state.filter(company => company.id !== payload)
+
     default:
       return state
   }
