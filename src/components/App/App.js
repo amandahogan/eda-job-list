@@ -1,26 +1,26 @@
-import React, { Component } from 'react'
-import { Input, Menu } from 'semantic-ui-react'
+import React, { PropTypes } from 'react'
 
 import './App.css'
 import Board from '../../containers/Board'
+import Navbar from '../../components/Navbar'
+import Welcome from '../../components/Welcome'
 
-class App extends Component {
+class App extends React.Component {
   render () {
+    const { login, logout, profile } = this.props
     return (
       <div className='App'>
-        <Menu>
-          <Menu.Item name='home' onClick={this.handleItemClick} />
-          <Menu.Menu position='right'>
-            <Menu.Item>
-              <Input icon='search' placeholder='Search...' />
-            </Menu.Item>
-            <Menu.Item name='logout' onClick={this.handleItemClick} />
-          </Menu.Menu>
-        </Menu>
-        <Board />
+        <Navbar login={login} logout={logout} profile={profile} />
+        {profile ? <Board /> : <Welcome />}
       </div>
     )
   }
+}
+
+App.propTypes = {
+  login: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
+  profile: PropTypes.object
 }
 
 export default App
