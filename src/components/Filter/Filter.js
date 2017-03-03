@@ -10,20 +10,20 @@ const categories = [
 class Filter extends React.Component {
   render () {
     return (
-      <div>
-        <Menu className='filterFields' fluid>
+      <div className='Filter'>
+        <Menu fluid>
           <Dropdown placeholder='Category' fluid selection options={categories} />
           <Input placeholder='Search...' />
           <Button basic circular icon='plus' />
           <Button basic circular icon='minus' />
         </Menu>
         <Label as='a'>
-          <Icon name='plus' />
+          <Icon color='green' name='check' />
           Javascript
           <Icon name='delete' />
         </Label>
         <Label as='a'>
-          <Icon name='minus' />
+          <Icon color='red' name='ban' />
           AngularJS
           <Icon name='delete' />
         </Label>

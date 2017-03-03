@@ -13,10 +13,11 @@ class Board extends Component {
     return (
       <Grid className='Board'>
         <Menu fluid>
-          <Button circular onClick={this.props.addColumn}>
-            <Button.Content>
-              <Icon name='add' />
-            </Button.Content>
+          <Button basic onClick={this.props.addColumn}>
+            <Icon.Group size='large'>
+              <Icon name='columns' />
+              <Icon corner color='green' name='add' />
+            </Icon.Group>
           </Button>
         </Menu>
         <Grid.Row>
