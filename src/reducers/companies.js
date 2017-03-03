@@ -55,7 +55,7 @@ export default (state = initialState, {payload, type}) => {
         }
         return company
       })
-      
+
     case 'REMOVE_COMPANY':
       return state.filter(company => company.id !== payload)
 
