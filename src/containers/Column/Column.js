@@ -1,29 +1,33 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Grid } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 
 import { showDetails } from '../../actions/details'
 import Company from '../../components/Company'
+import Filter from '../../components/Filter'
 import Sort from '../../components/Sort'
 import './Column.css'
 
 class Column extends Component {
   render () {
     return (
-      <Grid.Column className='Column' computer={8} mobile={16} tablet={16}>
-        <Sort />
-        {this.props.companies.map((company, index) => {
-          return (
-            <Company
-              company={company}
-              key={index}
-              showDetails={() => {
-                this.props.showDetails(company.id)
-              }}
-            />
-          )
-        })}
-      </Grid.Column>
+      <Container>
+        <Filter />
+        <Grid.Column className='Column' computer={7} mobile={16} tablet={16}>
+          <Sort />
+          {this.props.companies.map((company, index) => {
+            return (
+              <Company
+                company={company}
+                key={index}
+                showDetails={() => {
+                  this.props.showDetails(company.id)
+                }}
+              />
+            )
+          })}
+        </Grid.Column>
+      </Container>
     )
   }
 }
