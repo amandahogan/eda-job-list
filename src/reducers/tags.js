@@ -32,7 +32,9 @@ const initialState = [
     categoryId: 2,
     value: 'Auckland',
     companies: [
-      {companyId: 4}
+      {companyId: 3},
+      {companyId: 4},
+      {companyId: 5}
     ]
   },
   {
@@ -48,7 +50,8 @@ const initialState = [
     categoryId: 3,
     value: 'AngluarJS',
     companies: [
-      {companyId: 0}
+      {companyId: 0},
+      {companyId: 5}
     ]
   }
 ]
