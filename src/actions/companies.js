@@ -1,4 +1,4 @@
-import { addTag } from '../actions/tags'
+import { addTag } from './tags'
 import { getTagId, hasTag } from '../selectors/tags'
 
 let nextColumnId = 3
