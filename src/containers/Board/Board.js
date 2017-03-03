@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Button, Grid, Icon, Menu } from 'semantic-ui-react'
 
 import { addColumn, removeColumn } from '../../actions/columns'
-import Details from '../../components/Details'
+import Details from '../Details'
 import Column from '../Column'
 
 import './Board.css'
