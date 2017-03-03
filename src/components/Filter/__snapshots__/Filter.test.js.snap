@@ -1,7 +1,7 @@
 exports[`<Filter /> matches snapshot 1`] = `
-<div>
+<div
+  className="Filter">
   <Menu
-    className="filterFields"
     fluid={true}>
     <Dropdown
       additionLabel="Add "
@@ -52,7 +52,8 @@ exports[`<Filter /> matches snapshot 1`] = `
     as="a">
     <Icon
       as="i"
-      name="plus" />
+      color="green"
+      name="check" />
     Javascript
     <Icon
       as="i"
@@ -62,7 +63,8 @@ exports[`<Filter /> matches snapshot 1`] = `
     as="a">
     <Icon
       as="i"
-      name="minus" />
+      color="red"
+      name="ban" />
     AngularJS
     <Icon
       as="i"
