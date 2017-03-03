@@ -1,10 +1,10 @@
-let nextColumnId = 3
+let nextCompanyId = 3
 
 export const addCompany = company => {
   return {
     payload: Object.assign(
       {},
-      {id: nextColumnId++}
+      {id: nextCompanyId++}
     ),
     type: 'ADD_COMPANY'
   }
