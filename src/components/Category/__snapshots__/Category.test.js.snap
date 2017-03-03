@@ -1,0 +1,11 @@
+exports[`<Category /> matches snapshot 1`] = `
+<List
+  horizontal={true}>
+  <span>
+    <strong>
+      Test
+      : 
+    </strong>
+  </span>
+</List>
+`;
