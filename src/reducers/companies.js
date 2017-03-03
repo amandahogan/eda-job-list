@@ -42,6 +42,20 @@ export default (state = initialState, {payload, type}) => {
     case 'ADD_COMPANY':
       return [...state, payload]
 
+    case 'ADD_COMPANY_TAG':
+      return state.map(company => {
+        if (company.id === payload.companyId) {
+          return Object.assign(
+            {},
+            company,
+            {
+              tags: [...company.tags, payload.tagId]
+            }
+          )
+        }
+        return company
+      })
+      
     case 'REMOVE_COMPANY':
       return state.filter(company => company.id !== payload)
 

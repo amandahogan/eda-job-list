@@ -58,6 +58,20 @@ const initialState = [
 
 export default (state = initialState, {payload, type}) => {
   switch (type) {
+    case 'ADD_COMPANY_TAG':
+      return state.map(tag => {
+        if (tag.id === payload.tagId) {
+          return Object.assign(
+            {},
+            tag,
+            {
+              companies: [...tag.companies, payload.companyId]
+            }
+          )
+        }
+        return tag
+      })
+
     case 'ADD_TAG':
       return [...state, payload]
 
