@@ -4,12 +4,14 @@ import { Grid } from 'semantic-ui-react'
 
 import { showDetails } from '../../actions/details'
 import Company from '../../components/Company'
+import Sort from '../../components/Sort'
 import './Column.css'
 
 class Column extends Component {
   render () {
     return (
       <Grid.Column className='Column' computer={8} mobile={16} tablet={16}>
+        <Sort />
         {this.props.companies.map((company, index) => {
           return (
             <Company
