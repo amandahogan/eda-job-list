@@ -1,0 +1,72 @@
+exports[`<Filter /> matches snapshot 1`] = `
+<div>
+  <Menu
+    className="filterFields"
+    fluid={true}>
+    <Dropdown
+      additionLabel="Add "
+      additionPosition="top"
+      closeOnBlur={true}
+      fluid={true}
+      icon="dropdown"
+      noResultsMessage="No results found."
+      openOnFocus={true}
+      options={
+        Array [
+          Object {
+            "key": "languages",
+            "text": "Languages",
+            "value": "languages",
+          },
+          Object {
+            "key": "locations",
+            "text": "Locations",
+            "value": "locations",
+          },
+          Object {
+            "key": "technologies",
+            "text": "Technologies",
+            "value": "technologies",
+          },
+        ]
+      }
+      placeholder="Category"
+      renderLabel={[Function]}
+      selectOnBlur={true}
+      selection={true} />
+    <Input
+      placeholder="Search..."
+      type="text" />
+    <Button
+      as="button"
+      basic={true}
+      circular={true}
+      icon="plus" />
+    <Button
+      as="button"
+      basic={true}
+      circular={true}
+      icon="minus" />
+  </Menu>
+  <Label
+    as="a">
+    <Icon
+      as="i"
+      name="plus" />
+    Javascript
+    <Icon
+      as="i"
+      name="delete" />
+  </Label>
+  <Label
+    as="a">
+    <Icon
+      as="i"
+      name="minus" />
+    AngularJS
+    <Icon
+      as="i"
+      name="delete" />
+  </Label>
+</div>
+`;
