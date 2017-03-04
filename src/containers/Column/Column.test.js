@@ -12,10 +12,13 @@ it('renders without crashing', () => {
     companies: [{id: 0}]
   }
   const store = mockStore(initialState)
+  const column = {
+    id: 0
+  }
   const div = document.createElement('div')
   ReactDOM.render(
     <Provider store={store}>
-      <Column />
+      <Column column={column} />
     </Provider>
     , div)
 })
