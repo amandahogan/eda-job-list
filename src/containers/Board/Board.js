@@ -25,7 +25,7 @@ class Board extends Component {
             return <Column column={column} key={index} />
           })}
         </Grid.Row>
-        <Details />
+        {this.props.isDetailsOpen ? <Details /> : null}
       </Grid>
     )
   }
@@ -34,7 +34,8 @@ class Board extends Component {
 export default connect(
   state => {
     return {
-      columns: state.columns
+      columns: state.columns,
+      isDetailsOpen: state.details !== null
     }
   },
   dispatch => {

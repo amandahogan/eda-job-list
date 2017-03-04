@@ -7,18 +7,20 @@ class Category extends React.Component {
   render () {
     const { category, tags } = this.props
     return (
-      <List horizontal>
+      <div>
         <span><strong>{category.name}: </strong></span>
-        {tags.map((tag, index) => {
-          return (
-            <List.Item key={index}>
-              <List.Content>
-                <Tag category={category} value={tag.value} />
-              </List.Content>
-            </List.Item>
-          )
-        })}
-      </List>
+        <List horizontal>
+          {tags.map((tag, index) => {
+            return (
+              <List.Item key={index}>
+                <List.Content>
+                  <Tag category={category} value={tag.value} />
+                </List.Content>
+              </List.Item>
+            )
+          })}
+        </List>
+      </div>
     )
   }
 }
