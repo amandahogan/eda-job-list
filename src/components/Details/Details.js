@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React, { PropTypes } from 'react'
 import { Button, Header, Icon, Image, Modal } from 'semantic-ui-react'
 
+import Category from '../../components/Category'
 import './Details.css'
 
-class Details extends Component {
+class Details extends React.Component {
   render () {
     return (
       <Modal open={this.props.open} onClose={this.props.close} >
@@ -11,16 +12,14 @@ class Details extends Component {
         <Modal.Content image>
           <Image wrapped size='medium' src='http://semantic-ui.com/images/wireframe/image.png' />
           <Modal.Description>
-            <Header>Modal Header</Header>
-            <p>This is an example of expanded content that will cause the modal's dimmer to scroll</p>
-            <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
-            <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
-            <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
-            <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
-            <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
-            <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
-            <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
-            <Image src='http://semantic-ui.com/images/wireframe/paragraph.png' />
+            <Header>Tags</Header>
+            {this.props.categories.map((category, index) => {
+              return <Category
+                category={category}
+                key={index}
+                tags={category.tags}
+              />
+            })}
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
@@ -31,6 +30,13 @@ class Details extends Component {
       </Modal>
     )
   }
+}
+
+Details.propTypes = {
+  company: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default Details

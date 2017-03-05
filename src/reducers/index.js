@@ -5,6 +5,7 @@ import categories from './categories'
 import columns from './columns'
 import companies from './companies'
 import details from './details'
+import tags from './tags'
 import users from './users'
 
 export default combineReducers({
@@ -13,5 +14,6 @@ export default combineReducers({
   columns,
   companies,
   details,
+  tags,
   users
 })
