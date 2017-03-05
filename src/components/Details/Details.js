@@ -33,6 +33,11 @@ class Details extends React.Component {
 }
 
 Details.propTypes = {
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      tags: PropTypes.arrayOf(PropTypes.object).isRequired
+    })
+  ).isRequired,
   company: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired

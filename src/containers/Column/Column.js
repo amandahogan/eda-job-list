@@ -7,6 +7,7 @@ import { showDetails } from '../../actions/details'
 import Company from '../../components/Company'
 import Filter from '../../components/Filter'
 import Sort from '../../components/Sort'
+import { getCompanies } from '../../selectors/companies'
 import Actions from './Actions'
 import './Column.css'
 
@@ -50,7 +51,7 @@ Column.propTypes = {
 export default connect(
   state => {
     return {
-      companies: state.companies
+      companies: getCompanies(state)
     }
   },
   (dispatch, ownProps) => {

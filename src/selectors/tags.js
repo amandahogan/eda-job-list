@@ -3,14 +3,11 @@ import { getCategoryById } from './categories'
 export const getTagById = (state, tagId) => {
   const matching = state.tags.find(tag => tag.id === tagId)
   if (matching === undefined) return null
-  return Object.assign(
-    {},
-    matching,
-    {
-      category: getCategoryById(matching.categoryId),
-      categoryId: undefined
-    }
-  )
+  return {
+    category: getCategoryById(state, matching.categoryId),
+    id: matching.id,
+    value: matching.value
+  }
 }
 
 export const getTagId = (state, categoryId, value) => {

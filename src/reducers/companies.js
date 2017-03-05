@@ -6,19 +6,19 @@ const initialState = [
     tags: [0, 2, 5]
   },
   {
-    desciption: '',
+    description: '',
     id: 1,
     name: 'Link',
     tags: [0]
   },
   {
-    desciption: '',
+    description: '',
     id: 2,
     name: 'Xceed',
     tags: [0]
   },
   {
-    desciption: '',
+    description: '',
     id: 3,
     name: 'Lightbox',
     tags: [0, 3, 4]

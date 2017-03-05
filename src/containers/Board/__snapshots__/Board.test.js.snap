@@ -8,6 +8,7 @@ exports[`test renders without crashing 1`] = `
       },
     ]
   }
+  isDetailsOpen={true}
   removeColumn={[Function]}
   store={
     Object {

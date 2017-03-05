@@ -5,7 +5,6 @@ class Tag extends React.Component {
   render () {
     return (
       <Label
-        as='a'
         color={this.props.category.colour}
         tag
       >{this.props.value}</Label>
