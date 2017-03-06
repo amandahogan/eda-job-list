@@ -13,10 +13,10 @@ class Details extends React.Component {
         open={this.props.open}
       >
         <Modal.Header>{this.props.company.name}</Modal.Header>
-        <Modal.Content image>
+        <Modal.Content>
           <Modal.Description>
             <Header>Description:</Header>
-            {this.props.company.description}
+            <p>{this.props.company.description}</p>
             <Header>Tags:</Header>
             {this.props.categories.map((category, index) => {
               return <Category

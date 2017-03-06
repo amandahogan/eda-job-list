@@ -14,25 +14,28 @@ const initialState = [
     tags: [0]
   },
   {
-    description: '',
+    description:
+      'At Jobbatical, we think beyond borders and help the world work together. We believe the world really is your oyster and your next career step could be combined with your travel aspirations. We believe that the traditional 9-to-5 work model is fading away and that people want to join mission-driven teams, wherever they are in the world. We want to encourage individuals and employers to be honest about their commitments to each other. It\'s our goal to encourage companies to set aside cultural biases and hire the people with the best skill set for the job. We follow the same principles in recruiting for our own team—we don\'t discriminate based on nationality, gender, ethnicity, religion, sexual orientation, or anything else that doesn\'t have anything to do with the role you\'ll be filling.',
     id: 2,
     name: 'Jobbatical',
     tags: [0]
   },
   {
-    description: '',
+    description:
+      'Lightbox is a New Zealand streaming TV service that offers you an incredible choice of TV shows to watch ad-free. For $12.99 per 30 days, you’ll have unlimited access to brand new, globally trending shows, cult classics, New Zealand favourites, and a huge range of kids’ shows.',
     id: 3,
     name: 'Lightbox',
     tags: [0, 3, 4]
   },
   {
-    description: '',
+    description:
+      'In 2014, 8 Wire Digital came to fruition as a result of years of tech, web, and ecommerce experience coming together. Started by a couple of kiwis slugging it out at one of the world’s leading Magento Agencies in Australia, they decided to bring their talents back home to NZ. As it stands now, we’re an expert team based in Auckland, and we\'re backed with that experience of producing enterprise-level ecommerce solutions for some of Australasia\'s largest retailers. We’re passionate about our work, being at the cutting edge of technology, and delivering high performance ecommerce solutions. We\'ve even got individuals running their own online retailers, so we know what it\'s like on both sides of the fence. As a certified Magento developer, a Shopify partner, and a Woocommerce specialist, we\'ve got the right blend of skills, knowledge, and experience that allows us to deliver exactly what our clients need.',
     id: 4,
     name: '8 Wire Digital',
     tags: [1, 3]
   },
   {
-    description: '',
+    description: 'Vend is New Zealand’s leading retail POS software, inventory management, ecommerce & customer loyalty for iPad, Mac and PC. Easily manage & grow your business in the cloud.',
     id: 5,
     name: 'Vend',
     tags: [1, 3, 5]

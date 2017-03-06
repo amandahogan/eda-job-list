@@ -27,6 +27,7 @@ class Company extends Component {
           </Card.Meta>
           <Card.Description>
             {this.props.company.description}
+            <br />
             {this.props.company.tags.map((tag, index) => {
               return (
                 <Tags
