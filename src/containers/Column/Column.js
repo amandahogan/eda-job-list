@@ -8,6 +8,7 @@ import Company from '../../components/Company'
 import Filter from '../../components/Filter'
 import Sort from '../../components/Sort'
 import { getCompanies } from '../../selectors/companies'
+import { getCategories } from '../../selectors/categories'
 import Actions from './Actions'
 import './Column.css'
 
@@ -22,7 +23,7 @@ class Column extends Component {
     return (
       <Container>
         <Actions actions={actions} />
-        <Filter />
+        <Filter categories={this.props.categories} />
         <Grid.Column className='Column' computer={7} mobile={16} tablet={16}>
           <Sort />
           {this.props.companies.map((company, index) => {
@@ -51,7 +52,8 @@ Column.propTypes = {
 export default connect(
   state => {
     return {
-      companies: getCompanies(state)
+      companies: getCompanies(state),
+      categories: getCategories(state)
     }
   },
   (dispatch, ownProps) => {

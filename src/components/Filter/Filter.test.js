@@ -7,12 +7,15 @@ import Filter from './Filter'
 describe('<Filter />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<Filter />, div)
+    const categories = [{id: 0, name: 'test'}]
+    ReactDOM.render(<Filter categories={categories} />, div)
   })
 
   it('matches snapshot', () => {
+    const categories = [{id: 0, name: 'test'}]
     expect(
-      shallow(<Filter />).getNode()
+      shallow(
+        <Filter categories={categories} />).getNode()
     ).toMatchSnapshot()
   })
 })

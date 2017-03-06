@@ -14,19 +14,9 @@ exports[`<Filter /> matches snapshot 1`] = `
       options={
         Array [
           Object {
-            "key": "languages",
-            "text": "Languages",
-            "value": "languages",
-          },
-          Object {
-            "key": "locations",
-            "text": "Locations",
-            "value": "locations",
-          },
-          Object {
-            "key": "technologies",
-            "text": "Technologies",
-            "value": "technologies",
+            "key": 0,
+            "text": "test",
+            "value": "test",
           },
         ]
       }
