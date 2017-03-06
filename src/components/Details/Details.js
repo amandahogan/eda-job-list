@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { Button, Header, Icon, Image, Modal } from 'semantic-ui-react'
+import { Header, Modal } from 'semantic-ui-react'
 
 import Category from '../../components/Category'
 import './Details.css'
@@ -13,11 +13,10 @@ class Details extends React.Component {
         open={this.props.open}
       >
         <Modal.Header>{this.props.company.name}</Modal.Header>
-        <Modal.Content image>
-          <Image wrapped size='medium' src='http://semantic-ui.com/images/wireframe/image.png' />
+        <Modal.Content>
           <Modal.Description>
             <Header>Description:</Header>
-            {this.props.company.description}
+            <p>{this.props.company.description}</p>
             <Header>Tags:</Header>
             {this.props.categories.map((category, index) => {
               return <Category
