@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { Card, Image } from 'semantic-ui-react'
 
+import Tags from '../Tag'
 import './Company.css'
 
 class Company extends Component {
@@ -26,11 +27,33 @@ class Company extends Component {
           </Card.Meta>
           <Card.Description>
             {this.props.company.description}
+            {this.props.company.tags.map((tag, index) => {
+              return (
+                <Tags
+                  category={tag.category}
+                  key={index}
+                  value={tag.value}
+                />
+              )
+            })}
           </Card.Description>
         </Card.Content>
       </Card>
     )
   }
+}
+
+Company.propTypes = {
+  company: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    tags: PropTypes.arrayOf(
+      PropTypes.shape({
+        category: PropTypes.object.isRequired,
+        value: PropTypes.string.isRequired
+      })
+    ).isRequired
+  }).isRequired
 }
 
 export default Company

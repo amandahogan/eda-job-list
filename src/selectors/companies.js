@@ -1,10 +1,10 @@
 import { getTagById } from './tags'
 
-export const getCompanies = state => {
-  return state.companies.map(company => getCompanyById(company.id))
+export function getCompanies (state) {
+  return state.companies.map(company => getCompanyById(state, company.id))
 }
 
-export const getCompanyById = (state, companyId) => {
+export function getCompanyById (state, companyId) {
   const matching = state.companies.find(company => {
     return company.id === companyId
   })
@@ -12,6 +12,6 @@ export const getCompanyById = (state, companyId) => {
   return Object.assign(
     {},
     matching,
-    {tags: matching.tags.map(getTagById)}
+    {tags: matching.tags.map(tagId => getTagById(state, tagId))}
   )
 }

@@ -9,7 +9,7 @@ const mockStore = configureStore()
 
 it('renders without crashing', () => {
   const initialState = {
-    companies: [{id: 0}]
+    companies: []
   }
   const store = mockStore(initialState)
   const column = {
