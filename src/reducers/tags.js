@@ -48,7 +48,7 @@ const initialState = [
   {
     id: 5,
     categoryId: 3,
-    value: 'AngluarJS',
+    value: 'AngularJS',
     companies: [
       {companyId: 0},
       {companyId: 5}
