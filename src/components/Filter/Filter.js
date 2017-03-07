@@ -86,7 +86,10 @@ class Filter extends React.Component {
               <Label as='a'>
                 <Icon color='green' name='check' />
                 {tag.value}
-                <Icon name='delete' />
+                <Icon
+                  onClick={() => this.props.removeIncludeTag(tag.id)}
+                  name='delete'
+                />
               </Label>
             )
           })
@@ -97,7 +100,10 @@ class Filter extends React.Component {
               <Label as='a'>
                 <Icon color='red' name='ban' />
                 {tag.value}
-                <Icon name='delete' />
+                <Icon
+                  onClick={() => this.props.removeExcludeTag(tag.id)}
+                  name='delete'
+                />
               </Label>
             )
           })
