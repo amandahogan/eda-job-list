@@ -5,10 +5,11 @@ import { Container, Grid } from 'semantic-ui-react'
 import { removeColumn } from '../../actions/columns'
 import { showDetails } from '../../actions/details'
 import Company from '../../components/Company'
-import Filter from '../../components/Filter'
 import Sort from '../../components/Sort'
-import { getCompanies } from '../../selectors/companies'
 import { getCategories } from '../../selectors/categories'
+import { getCompanies } from '../../selectors/companies'
+import { getTags } from '../../selectors/tags'
+import Filter from '../Filter'
 import Actions from './Actions'
 import './Column.css'
 
@@ -23,7 +24,7 @@ class Column extends Component {
     return (
       <Container>
         <Actions actions={actions} />
-        <Filter categories={this.props.categories} />
+        <Filter categories={this.props.categories} tags={this.props.tags} column={this.props.column} />
         <Grid.Column className='Column' computer={7} mobile={16} tablet={16}>
           <Sort />
           {this.props.companies.map((company, index) => {
@@ -50,10 +51,23 @@ Column.propTypes = {
 }
 
 export default connect(
-  state => {
+  (state, ownProps) => {
     return {
-      companies: getCompanies(state),
-      categories: getCategories(state)
+      companies: getCompanies(state)
+        .filter(company => {
+          if (ownProps.column.include.length === 0) {
+            return true
+          }
+          return ownProps.column.include.every(tagId => company.tags.some(tag => tag.id === tagId))
+        })
+        .filter(company => {
+          if (ownProps.column.exclude === 0) {
+            return true
+          }
+          return ownProps.column.exclude.every(tagId => company.tags.every(tag => tag.id !== tagId))
+        }),
+      categories: getCategories(state),
+      tags: getTags(state)
     }
   },
   (dispatch, ownProps) => {

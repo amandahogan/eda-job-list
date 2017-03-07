@@ -36,5 +36,6 @@ exports[`test matches snapshot 1`] = `
       },
       "unsubscribe": null,
     }
-  } />
+  }
+  tags={Array []} />
 `;
