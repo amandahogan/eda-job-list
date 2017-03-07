@@ -1,6 +1,5 @@
+import { shallow } from 'enzyme'
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 
 import Column from './Column'
@@ -15,10 +14,21 @@ it('renders without crashing', () => {
   const column = {
     id: 0
   }
-  const div = document.createElement('div')
-  ReactDOM.render(
-    <Provider store={store}>
-      <Column column={column} />
-    </Provider>
-    , div)
+  shallow(
+    <Column store={store} column={column} />
+  )
+})
+
+it('matches snapshot', () => {
+  const initialState = {
+    companies: []
+  }
+  const store = mockStore(initialState)
+  const column = {
+    id: 0
+  }
+  expect(
+    shallow(
+      <Column store={store} column={column} />
+  ).getNode()).toMatchSnapshot()
 })
