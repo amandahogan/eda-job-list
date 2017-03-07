@@ -9,7 +9,7 @@ describe('<Filter />', () => {
     const div = document.createElement('div')
     const categories = [{id: 0, name: 'test'}]
     const tags = []
-    ReactDOM.render(<Filter categories={categories} tags={tags} />, div)
+    ReactDOM.render(<Filter categories={categories} exclude={[]} include={[]} tags={tags} />, div)
   })
 
   it('matches snapshot', () => {
@@ -17,7 +17,7 @@ describe('<Filter />', () => {
     const tags = []
     expect(
       shallow(
-        <Filter categories={categories} tags={tags} />).getNode()
+        <Filter categories={categories} exclude={[]} include={[]} tags={tags} />).getNode()
     ).toMatchSnapshot()
   })
 })

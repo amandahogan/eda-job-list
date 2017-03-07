@@ -2,10 +2,14 @@ import { connect } from 'react-redux'
 
 import { addExcludeTag, addIncludeTag, removeExcludeTag, removeIncludeTag } from '../../actions/columns'
 import Filter from '../../components/Filter'
+import { getTagById } from '../../selectors/tags'
 
 export default connect(
-  state => {
-    return {}
+  (state, ownProps) => {
+    return {
+      exclude: ownProps.column.exclude.map(tagId => getTagById(state, tagId)),
+      include: ownProps.column.include.map(tagId => getTagById(state, tagId))
+    }
   },
   (dispatch, ownProps) => {
     const columnId = ownProps.column.id

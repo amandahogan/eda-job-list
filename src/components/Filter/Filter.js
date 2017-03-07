@@ -80,16 +80,28 @@ class Filter extends React.Component {
             }}
           />
         </Menu>
-        <Label as='a'>
-          <Icon color='green' name='check' />
-          Javascript
-          <Icon name='delete' />
-        </Label>
-        <Label as='a'>
-          <Icon color='red' name='ban' />
-          AngularJS
-          <Icon name='delete' />
-        </Label>
+        {
+          this.props.include.map(tag => {
+            return (
+              <Label as='a'>
+                <Icon color='green' name='check' />
+                {tag.value}
+                <Icon name='delete' />
+              </Label>
+            )
+          })
+        }
+        {
+          this.props.exclude.map(tag => {
+            return (
+              <Label as='a'>
+                <Icon color='red' name='ban' />
+                {tag.value}
+                <Icon name='delete' />
+              </Label>
+            )
+          })
+        }
       </div>
     )
   }
@@ -98,10 +110,27 @@ class Filter extends React.Component {
 export default Filter
 
 Filter.propTypes = {
+  addExcludeTag: PropTypes.func.isRequired,
+  addIncludeTag: PropTypes.func.isRequired,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired
     })
-  ).isRequired
+  ).isRequired,
+  column: PropTypes.shape({
+    id: PropTypes.number.isRequired
+  }).isRequired,
+  exclude: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired
+    })
+  ).isRequired,
+  include: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired
+    })
+  ).isRequired,
+  removeExcludeTag: PropTypes.func.isRequired,
+  removeIncludeTag: PropTypes.func.isRequired
 }

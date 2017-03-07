@@ -53,29 +53,8 @@ exports[`<Filter /> matches snapshot 1`] = `
       basic={true}
       circular={true}
       disabled={true}
-      icon="minus" />
+      icon="minus"
+      onClick={[Function]} />
   </Menu>
-  <Label
-    as="a">
-    <Icon
-      as="i"
-      color="green"
-      name="check" />
-    Javascript
-    <Icon
-      as="i"
-      name="delete" />
-  </Label>
-  <Label
-    as="a">
-    <Icon
-      as="i"
-      color="red"
-      name="ban" />
-    AngularJS
-    <Icon
-      as="i"
-      name="delete" />
-  </Label>
 </div>
 `;
