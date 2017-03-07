@@ -75,6 +75,9 @@ class Filter extends React.Component {
             circular
             disabled={this.state.selectedCategoryId === null || this.state.selectedTagValue === null}
             icon='minus'
+            onClick={() => {
+              this.props.addExcludeTag(this.state.selectedCategoryId, this.state.selectedTagValue)
+            }}
           />
         </Menu>
         <Label as='a'>
