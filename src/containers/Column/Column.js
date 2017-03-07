@@ -51,9 +51,21 @@ Column.propTypes = {
 }
 
 export default connect(
-  state => {
+  (state, ownProps) => {
     return {
-      companies: getCompanies(state),
+      companies: getCompanies(state)
+        .filter(company => {
+          if (ownProps.column.include.length === 0) {
+            return true
+          }
+          return ownProps.column.include.every(tagId => company.tags.some(tag => tag.id === tagId))
+        })
+        .filter(company => {
+          if (ownProps.column.exclude === 0) {
+            return true
+          }
+          return ownProps.column.exclude.every(tagId => company.tags.every(tag => tag.id !== tagId))
+        }),
       categories: getCategories(state),
       tags: getTags(state)
     }

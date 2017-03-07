@@ -83,7 +83,7 @@ class Filter extends React.Component {
         {
           this.props.include.map(tag => {
             return (
-              <Label as='a'>
+              <Label as='a' key={tag.id}>
                 <Icon color='green' name='check' />
                 {tag.value}
                 <Icon
@@ -97,7 +97,7 @@ class Filter extends React.Component {
         {
           this.props.exclude.map(tag => {
             return (
-              <Label as='a'>
+              <Label as='a' key={tag.id}>
                 <Icon color='red' name='ban' />
                 {tag.value}
                 <Icon
