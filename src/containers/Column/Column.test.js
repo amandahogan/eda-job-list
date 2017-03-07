@@ -8,7 +8,8 @@ const mockStore = configureStore()
 
 it('renders without crashing', () => {
   const initialState = {
-    companies: []
+    companies: [],
+    tags: []
   }
   const store = mockStore(initialState)
   const column = {
@@ -21,7 +22,8 @@ it('renders without crashing', () => {
 
 it('matches snapshot', () => {
   const initialState = {
-    companies: []
+    companies: [],
+    tags: []
   }
   const store = mockStore(initialState)
   const column = {

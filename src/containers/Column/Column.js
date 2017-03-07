@@ -7,8 +7,9 @@ import { showDetails } from '../../actions/details'
 import Company from '../../components/Company'
 import Filter from '../../components/Filter'
 import Sort from '../../components/Sort'
-import { getCompanies } from '../../selectors/companies'
 import { getCategories } from '../../selectors/categories'
+import { getCompanies } from '../../selectors/companies'
+import { getTags } from '../../selectors/tags'
 import Actions from './Actions'
 import './Column.css'
 
@@ -23,7 +24,7 @@ class Column extends Component {
     return (
       <Container>
         <Actions actions={actions} />
-        <Filter categories={this.props.categories} />
+        <Filter categories={this.props.categories} tags={this.props.tags} />
         <Grid.Column className='Column' computer={7} mobile={16} tablet={16}>
           <Sort />
           {this.props.companies.map((company, index) => {
@@ -53,7 +54,8 @@ export default connect(
   state => {
     return {
       companies: getCompanies(state),
-      categories: getCategories(state)
+      categories: getCategories(state),
+      tags: getTags(state)
     }
   },
   (dispatch, ownProps) => {

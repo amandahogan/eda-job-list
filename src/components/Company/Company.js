@@ -26,15 +26,17 @@ class Company extends Component {
             TimeStamp
           </Card.Meta>
           <Card.Description>
-            {this.props.company.tags.map((tag, index) => {
-              return (
-                <Tags
-                  category={tag.category}
-                  key={index}
-                  value={tag.value}
-                />
-              )
-            })}
+            {this.props.company.tags
+              .map((tag, index) => {
+                return (
+                  <Tags
+                    category={tag.category}
+                    key={index}
+                    value={tag.value}
+                  />
+                )
+              })
+            }
           </Card.Description>
         </Card.Content>
       </Card>

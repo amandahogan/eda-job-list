@@ -18,7 +18,7 @@ export const getTagId = (state, categoryId, value) => {
 }
 
 export const getTags = state => {
-  return this.state.tags.map(getTagById)
+  return state.tags.map(tag => getTagById(state, tag.id))
 }
 
 export const hasTag = (state, categoryId, value) => {

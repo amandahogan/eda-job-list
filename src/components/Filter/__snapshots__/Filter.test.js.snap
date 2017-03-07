@@ -10,13 +10,14 @@ exports[`<Filter /> matches snapshot 1`] = `
       fluid={true}
       icon="dropdown"
       noResultsMessage="No results found."
+      onChange={[Function]}
       openOnFocus={true}
       options={
         Array [
           Object {
             "key": 0,
             "text": "test",
-            "value": "test",
+            "value": 0,
           },
         ]
       }
@@ -24,9 +25,22 @@ exports[`<Filter /> matches snapshot 1`] = `
       renderLabel={[Function]}
       selectOnBlur={true}
       selection={true} />
-    <Input
-      placeholder="Search..."
-      type="text" />
+    <Dropdown
+      additionLabel="Add "
+      additionPosition="top"
+      allowAdditions={true}
+      closeOnBlur={true}
+      fluid={true}
+      icon="dropdown"
+      noResultsMessage="No results found."
+      onChange={undefined}
+      openOnFocus={true}
+      options={Array []}
+      placeholder="Tag"
+      renderLabel={[Function]}
+      search={true}
+      selectOnBlur={true}
+      selection={true} />
     <Button
       as="button"
       basic={true}
