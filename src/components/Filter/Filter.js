@@ -4,13 +4,21 @@ import { Button, Dropdown, Icon, Label, Menu } from 'semantic-ui-react'
 class Filter extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {selectedCategoryId: null}
+    this.state = {selectedCategoryId: null, selectedTagValue: null}
     this.onCategoryChange = this.onCategoryChange.bind(this)
+    this.onTagChange = this.onTagChange.bind(this)
   }
 
   onCategoryChange (event, data) {
     this.setState({
-      selectedCategoryId: data.value
+      selectedCategoryId: data.value,
+      selectedTagValue: null
+    })
+  }
+
+  onTagChange (event, data) {
+    this.setState({
+      selectedTagValue: data.value
     })
   }
 
@@ -53,8 +61,21 @@ class Filter extends React.Component {
             search
             selection
           />
-          <Button basic circular icon='plus' />
-          <Button basic circular icon='minus' />
+          <Button
+            basic
+            circular
+            disabled={this.state.selectedCategoryId === null || this.state.selectedTagValue === null}
+            icon='plus'
+            onClick={() => {
+              this.props.addIncludeTag(this.state.selectedCategoryId, this.state.selectedTagValue)
+            }}
+          />
+          <Button
+            basic
+            circular
+            disabled={this.state.selectedCategoryId === null || this.state.selectedTagValue === null}
+            icon='minus'
+          />
         </Menu>
         <Label as='a'>
           <Icon color='green' name='check' />

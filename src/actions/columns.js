@@ -1,5 +1,7 @@
 let nextColumnId = 1
 
+import { getTagId } from '../selectors/tags'
+
 export const addColumn = () => {
   return {
     payload: nextColumnId++,
@@ -7,23 +9,33 @@ export const addColumn = () => {
   }
 }
 
-export const addExcludeTag = (columnId, tagId) => {
-  return {
-    payload: {
-      columnId,
-      tagId
-    },
-    type: 'ADD_EXCLUDE_TAG'
+export const addExcludeTag = (columnId, categoryId, value) => {
+  return (dispatch, getState) => {
+    const tagId = getTagId(getState(), categoryId, value)
+    if (tagId !== null) {
+      dispatch({
+        payload: {
+          columnId,
+          tagId
+        },
+        type: 'ADD_EXCLUDE_TAG'
+      })
+    }
   }
 }
 
-export const addIncludeTag = (columnId, tagId) => {
-  return {
-    payload: {
-      columnId,
-      tagId
-    },
-    type: 'ADD_INCLUDE_TAG'
+export const addIncludeTag = (columnId, categoryId, value) => {
+  return (dispatch, getState) => {
+    const tagId = getTagId(getState(), categoryId, value)
+    if (tagId !== null) {
+      dispatch({
+        payload: {
+          columnId,
+          tagId
+        },
+        type: 'ADD_INCLUDE_TAG'
+      })
+    }
   }
 }
 

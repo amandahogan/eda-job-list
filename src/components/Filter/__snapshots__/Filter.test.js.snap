@@ -33,7 +33,7 @@ exports[`<Filter /> matches snapshot 1`] = `
       fluid={true}
       icon="dropdown"
       noResultsMessage="No results found."
-      onChange={undefined}
+      onChange={[Function]}
       openOnFocus={true}
       options={Array []}
       placeholder="Tag"
@@ -45,11 +45,14 @@ exports[`<Filter /> matches snapshot 1`] = `
       as="button"
       basic={true}
       circular={true}
-      icon="plus" />
+      disabled={true}
+      icon="plus"
+      onClick={[Function]} />
     <Button
       as="button"
       basic={true}
       circular={true}
+      disabled={true}
       icon="minus" />
   </Menu>
   <Label

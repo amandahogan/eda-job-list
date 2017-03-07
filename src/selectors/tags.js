@@ -14,7 +14,7 @@ export const getTagId = (state, categoryId, value) => {
   const matching = state.tags.find(tag => {
     return tag.categoryId === categoryId && tag.value === value
   })
-  return matching === undefined ? null : matching
+  return matching === undefined ? null : matching.id
 }
 
 export const getTags = state => {
