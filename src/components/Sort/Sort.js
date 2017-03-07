@@ -2,11 +2,15 @@ import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
 
 class Sort extends Component {
-  state = { activeItem: 'Data Created' }
+  constructor (props) {
+    super(props)
+    this.state = { activeItem: 'Date Created' }
+    this.handleItemClick = (e, { name }) => this.setState({ activeItem: name }).bind(this)
+  }
+  // state = { activeItem: 'Date Created' }
+  // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-  render() {
+  render () {
     const { activeItem } = this.state
 
     return (
