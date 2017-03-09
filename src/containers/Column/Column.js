@@ -56,10 +56,10 @@ export default connect(
     switch (ownProps.column.sortBy) {
       case 'Name':
         compareFunction = this.props.companies
-        .map(company => {company.name})
-        .sort()
-        break;
-      default: throw new Error('Invalid sortBy:'+ ownProps.column.sortBy)
+        .sort((a, b) => a > b ? 1 : -1)
+        .map(company => company.name)
+        break
+      default: throw new Error('Invalid sortBy:' + ownProps.column.sortBy)
     }
     return {
       companies: getCompanies(state)
