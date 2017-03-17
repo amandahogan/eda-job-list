@@ -26,7 +26,10 @@ class Column extends Component {
         <Actions actions={actions} />
         <Filter categories={this.props.categories} tags={this.props.tags} column={this.props.column} />
         <Grid.Column className='Column' computer={7} mobile={16} tablet={16}>
-          <Sort changeSortBy={this.props.changeSortBy} />
+          <Sort
+            changeSortBy={this.props.changeSortBy}
+            sortBy={this.props.column.sortBy}
+          />
           {this.props.companies.map((company, index) => {
             return (
               <Company
@@ -52,14 +55,16 @@ Column.propTypes = {
 
 export default connect(
   (state, ownProps) => {
-    let compareFunction = null
+    let compareFunction = () => {}
     switch (ownProps.column.sortBy) {
       case 'Name':
-        compareFunction = this.props.companies
-        .sort((a, b) => a > b ? 1 : -1)
-        .map(company => company.name)
+        compareFunction = (companyA, companyB) => {
+          return companyA.name > companyB.name ? 1 : -1
+        }
         break
-      default: throw new Error('Invalid sortBy:' + ownProps.column.sortBy)
+
+      default:
+        throw new Error('Invalid sortBy:' + ownProps.column.sortBy)
     }
     return {
       companies: getCompanies(state)
