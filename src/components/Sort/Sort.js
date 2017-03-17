@@ -4,7 +4,6 @@ import { Menu } from 'semantic-ui-react'
 class Sort extends Component {
   constructor (props) {
     super(props)
-    this.state = { activeItem: 'Date Created' }
     this.handleItemClick = this.handleItemClick.bind(this)
   }
 
@@ -28,7 +27,7 @@ class Sort extends Component {
 
 Sort.propTypes = {
   changeSortBy: PropTypes.func.isRequired,
-  sortBy: PropTypes.string.isRequired
+  sortBy: PropTypes.oneOf(['Date Created', 'Last Updated', 'Name']).isRequired
 }
 
 export default Sort
