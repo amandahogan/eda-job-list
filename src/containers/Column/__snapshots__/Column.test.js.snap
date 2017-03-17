@@ -1,10 +1,12 @@
 exports[`test matches snapshot 1`] = `
 <Column
   categories={undefined}
+  changeSortBy={[Function]}
   closeThisColumn={[Function]}
   column={
     Object {
       "id": 0,
+      "sortBy": "Name",
     }
   }
   companies={Array []}

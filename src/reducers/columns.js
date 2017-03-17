@@ -1,7 +1,7 @@
 const defaultColumn = {
   exclude: [],
   include: [],
-  sortBy: 'date_created'
+  sortBy: 'Name'
 }
 
 const initialState = [

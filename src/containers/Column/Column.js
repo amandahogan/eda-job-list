@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Container, Grid } from 'semantic-ui-react'
 
-import { removeColumn } from '../../actions/columns'
+import { changeSortBy, removeColumn } from '../../actions/columns'
 import { showDetails } from '../../actions/details'
 import Company from '../../components/Company'
 import Sort from '../../components/Sort'
@@ -26,7 +26,10 @@ class Column extends Component {
         <Actions actions={actions} />
         <Filter categories={this.props.categories} tags={this.props.tags} column={this.props.column} />
         <Grid.Column className='Column' computer={7} mobile={16} tablet={16}>
-          <Sort />
+          <Sort
+            changeSortBy={this.props.changeSortBy}
+            sortBy={this.props.column.sortBy}
+          />
           {this.props.companies.map((company, index) => {
             return (
               <Company
@@ -52,6 +55,17 @@ Column.propTypes = {
 
 export default connect(
   (state, ownProps) => {
+    let compareFunction = () => {}
+    switch (ownProps.column.sortBy) {
+      case 'Name':
+        compareFunction = (companyA, companyB) => {
+          return companyA.name > companyB.name ? 1 : -1
+        }
+        break
+
+      default:
+        throw new Error('Invalid sortBy:' + ownProps.column.sortBy)
+    }
     return {
       companies: getCompanies(state)
         .filter(company => {
@@ -65,7 +79,8 @@ export default connect(
             return true
           }
           return ownProps.column.exclude.every(tagId => company.tags.every(tag => tag.id !== tagId))
-        }),
+        })
+        .sort(compareFunction),
       categories: getCategories(state),
       tags: getTags(state)
     }
@@ -74,6 +89,9 @@ export default connect(
     return {
       closeThisColumn: () => {
         dispatch(removeColumn(ownProps.column.id))
+      },
+      changeSortBy: sortBy => {
+        dispatch(changeSortBy(ownProps.column.id, sortBy))
       },
       showDetails: companyId => {
         dispatch(showDetails(companyId))

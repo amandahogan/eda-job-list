@@ -13,7 +13,8 @@ it('renders without crashing', () => {
   }
   const store = mockStore(initialState)
   const column = {
-    id: 0
+    id: 0,
+    sortBy: 'Name'
   }
   shallow(
     <Column store={store} column={column} />
@@ -27,7 +28,8 @@ it('matches snapshot', () => {
   }
   const store = mockStore(initialState)
   const column = {
-    id: 0
+    id: 0,
+    sortBy: 'Name'
   }
   expect(
     shallow(
