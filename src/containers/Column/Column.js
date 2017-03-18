@@ -63,6 +63,18 @@ export default connect(
         }
         break
 
+      case 'Date Created':
+        compareFunction = (companyA, companyB) => {
+          return companyA.dateCreated > companyB.dateCreated ? 1 : -1
+        }
+        break
+
+      case 'Last Updated':
+        compareFunction = (companyA, companyB) => {
+          return companyA.lastUpdated > companyB.lastUpdated ? 1 : -1
+        }
+        break
+
       default:
         throw new Error('Invalid sortBy:' + ownProps.column.sortBy)
     }
