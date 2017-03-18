@@ -4,6 +4,10 @@ import { Card, Image } from 'semantic-ui-react'
 import Tags from '../Tag'
 import './Company.css'
 
+const formatDate = date => {
+  return new Date(date).toString()
+}
+
 class Company extends Component {
   constructor (props) {
     super(props)
@@ -23,7 +27,8 @@ class Company extends Component {
             {this.props.company.name}
           </Card.Header>
           <Card.Meta>
-            TimeStamp
+            Date Created: {formatDate(this.props.company.dateCreated)}<br />
+            Last Updated: {formatDate(this.props.company.lastUpdated)}
           </Card.Meta>
           <Card.Description>
             {this.props.company.tags
