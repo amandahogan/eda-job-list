@@ -65,7 +65,7 @@ export default (state = initialState, {payload, type}) => {
             {},
             tag,
             {
-              companies: [...tag.companies, payload.companyId]
+              companies: [...tag.companies, {companyId: payload.companyId}]
             }
           )
         }

@@ -15,14 +15,15 @@ export const addCompany = company => {
 
 export const addCompanyTag = (companyId, categoryId, value) => {
   return (dispatch, getState) => {
-    const state = getState()
-    if (!hasTag(state, categoryId, value)) {
+    if (!hasTag(getState(), categoryId, value)) {
       dispatch(addTag(categoryId, value))
     }
-    const tagId = getTagId(categoryId, value)
+    const tagId = getTagId(getState(), categoryId, value)
     dispatch({
-      companyId,
-      tagId,
+      payload: {
+        companyId,
+        tagId
+      },
       type: 'ADD_COMPANY_TAG'
     })
   }
