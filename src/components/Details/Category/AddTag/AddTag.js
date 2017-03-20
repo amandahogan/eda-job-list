@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button, Input } from 'semantic-ui-react'
 
 class AddTag extends React.Component {
   constructor (props) {
@@ -8,28 +8,38 @@ class AddTag extends React.Component {
   }
 
   render () {
-    return (
-      <span>
-        {this.state.editing
-          ? <span>
-            <input
-              onChange={event => this.setState({value: event.target.value})}
-              ref={element => element && element.focus()}
-              type='text'
-              value={this.state.value}
-            />
-            <Button
-              basic
-              onClick={event => this.props.addTagValue(this.state.value)}
-            >Add</Button>
-          </span>
-          : <Button
-            basic
-            icon='plus'
-            onClick={event => this.setState({editing: true})}
-          />}
-      </span>
-    )
+    if (this.state.editing) {
+      return (
+        <Input
+          onBlur={event => {
+            this.setState({
+              editing: false,
+              value: ''
+            })
+            if (this.state.value) {
+              this.props.addTagValue(this.state.value)
+            }
+          }}
+          onChange={event => this.setState({value: event.target.value})}
+          type='text'
+          value={this.state.value}
+        >
+          <input
+            ref={element => {
+              if (element) element.focus()
+            }}
+          />
+        </Input>
+      )
+    } else {
+      return (
+        <Button
+          basic
+          icon='ellipsis horizontal'
+          onClick={event => this.setState({editing: true})}
+        />
+      )
+    }
   }
 }
 

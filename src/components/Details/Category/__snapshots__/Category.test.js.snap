@@ -10,5 +10,7 @@ exports[`<Category /> matches snapshot 1`] = `
     horizontal={true}>
     
   </List>
+  <AddTag
+    addTagValue={[Function]} />
 </div>
 `;
