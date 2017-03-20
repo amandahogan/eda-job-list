@@ -11,7 +11,13 @@ describe('<Category />', () => {
     }
     const tags = []
     expect(
-      shallow(<Category category={category} tags={tags} />).getNode()
+      shallow(
+        <Category
+          addTagValue={() => {}}
+          category={category}
+          tags={tags}
+        />
+      ).getNode()
     ).toMatchSnapshot()
   })
 })

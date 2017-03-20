@@ -5,6 +5,7 @@ export const addTag = (categoryId, value) => {
     payload: {
       id: nextTagId++,
       categoryId,
+      companies: [],
       value
     },
     type: 'ADD_TAG'

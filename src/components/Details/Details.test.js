@@ -8,5 +8,12 @@ it('renders without crashing', () => {
     name: 'Test'
   }
   const div = document.createElement('div')
-  ReactDOM.render(<Details categories={[]} company={company} />, div)
+  ReactDOM.render(
+    <Details
+      addTag={() => {}}
+      categories={[]}
+      company={company}
+    />,
+    div
+  )
 })

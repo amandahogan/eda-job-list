@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 
+import { addCompanyTag } from '../../actions/companies'
 import { hideDetails } from '../../actions/details'
 import Details from '../../components/Details'
 
@@ -31,6 +32,9 @@ export default connect(
   },
   dispatch => {
     return {
+      addTag: (companyId, categoryId, value) => {
+        return dispatch(addCompanyTag(companyId, categoryId, value))
+      },
       close: () => dispatch(hideDetails())
     }
   }

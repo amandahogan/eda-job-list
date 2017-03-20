@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
 import { List } from 'semantic-ui-react'
 
-import Tag from '../Tag'
+import Tag from '../../Tag'
+import AddTag from './AddTag'
 
 class Category extends React.Component {
   render () {
@@ -14,18 +15,24 @@ class Category extends React.Component {
             return (
               <List.Item key={index}>
                 <List.Content>
-                  <Tag category={category} value={tag.value} />
+                  <Tag
+                    addTagValue={this.props.addTag}
+                    category={category}
+                    value={tag.value}
+                  />
                 </List.Content>
               </List.Item>
             )
           })}
         </List>
+        <AddTag addTagValue={this.props.addTagValue} />
       </div>
     )
   }
 }
 
 Category.propTypes = {
+  addTagValue: PropTypes.func.isRequired,
   category: PropTypes.shape({
     colour: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired

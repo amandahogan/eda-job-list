@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Header, Modal } from 'semantic-ui-react'
 
-import Category from '../../components/Category'
+import Category from './Category'
 import './Details.css'
 
 class Details extends React.Component {
@@ -20,6 +20,13 @@ class Details extends React.Component {
             <Header>Tags:</Header>
             {this.props.categories.map((category, index) => {
               return <Category
+                addTagValue={value => {
+                  return this.props.addTag(
+                    this.props.company.id,
+                    category.id,
+                    value
+                  )
+                }}
                 category={category}
                 key={index}
                 tags={category.tags}
@@ -33,6 +40,7 @@ class Details extends React.Component {
 }
 
 Details.propTypes = {
+  addTag: PropTypes.func.isRequired,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       tags: PropTypes.arrayOf(PropTypes.object).isRequired
