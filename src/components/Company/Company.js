@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import { Card, Image } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
+import Followers from '../Followers'
 import Tags from '../Tag'
 import './Company.css'
 
@@ -22,7 +23,6 @@ class Company extends Component {
     return (
       <Card onClick={this.onCardClick} className='Company' centered fluid>
         <Card.Content>
-          <Image floated='right' size='mini' src='http://semantic-ui.com/images/avatar/large/steve.jpg' />
           <Card.Header>
             {this.props.company.name}
           </Card.Header>
@@ -43,6 +43,19 @@ class Company extends Component {
               })
             }
           </Card.Description>
+          <br />
+          <Card.Description>
+            {this.props.company.followers
+              .map((follower, index) => {
+                return (
+                  <Followers
+                    avatar={follower.avatar}
+                    key={index}
+                  />
+                )
+              })
+            }
+          </Card.Description>
         </Card.Content>
       </Card>
     )
@@ -57,6 +70,11 @@ Company.propTypes = {
       PropTypes.shape({
         category: PropTypes.object.isRequired,
         value: PropTypes.string.isRequired
+      })
+    ).isRequired,
+    followers: PropTypes.arrayOf(
+      PropTypes.shape({
+        avatar: PropTypes.string.isRequired
       })
     ).isRequired
   }).isRequired

@@ -1,6 +1,5 @@
 const initialState = {
-  avatar: 'http://semantic-ui.com/images/avatar/large/stevie.jpg',
-  name: 'Amanda'
+  userId: 0
 }
 
 export default (state = initialState, {payload, type}) => {
