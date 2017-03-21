@@ -3,10 +3,12 @@ import React from 'react'
 
 import Followers from './Followers'
 
+const avatar = ''
+
 describe('<Followers />', () => {
   it('matches snapshot', () => {
     expect(
-      shallow(<Followers />).getNode()
+      shallow(<Followers avatar={avatar} />).getNode()
     ).toMatchSnapshot()
   })
 })

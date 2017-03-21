@@ -3,6 +3,6 @@ exports[`<Followers /> matches snapshot 1`] = `
   as="img"
   floated="right"
   size="mini"
-  src={undefined}
+  src=""
   ui={true} />
 `;
