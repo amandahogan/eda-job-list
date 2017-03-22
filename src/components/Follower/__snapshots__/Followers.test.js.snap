@@ -1,8 +1,0 @@
-exports[`<Follower /> matches snapshot 1`] = `
-<Image
-  as="img"
-  floated="right"
-  size="mini"
-  src=""
-  ui={true} />
-`;
