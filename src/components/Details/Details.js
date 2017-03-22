@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { Header, Modal } from 'semantic-ui-react'
 
 import Category from './Category'
+import Follower from '../Follower'
 import './Details.css'
 
 class Details extends React.Component {
@@ -15,6 +16,19 @@ class Details extends React.Component {
         <Modal.Header>{this.props.company.name}</Modal.Header>
         <Modal.Content>
           <Modal.Description>
+            <Header>Followers:</Header>
+            {this.props.company.followers
+              .map((follower, index) => {
+                return (
+                  <Follower
+                    avatar={follower.avatar}
+                    key={index}
+                  />
+                )
+              })
+            }
+            <br />
+            <br />
             <Header>Description:</Header>
             <p>{this.props.company.description}</p>
             <Header>Tags:</Header>
@@ -48,7 +62,12 @@ Details.propTypes = {
   ).isRequired,
   company: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    followers: PropTypes.arrayOf(
+      PropTypes.shape({
+        avatar: PropTypes.string.isRequired
+      })
+    ).isRequired
   }).isRequired
 }
 

@@ -8,6 +8,7 @@ it('renders without crashing', () => {
   const company = {
     name: 'Lightbox',
     description: 'test',
+    followers: [],
     tags: []
   }
   ReactDOM.render(<Company company={company} />, div)
