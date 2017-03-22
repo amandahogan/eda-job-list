@@ -4,7 +4,7 @@ import { Image } from 'semantic-ui-react'
 class Follower extends React.Component {
   render () {
     return (
-      <Image floated='right' size='mini' src={this.props.avatar} />
+      <Image floated='left' size='mini' src={this.props.avatar} />
     )
   }
 }
