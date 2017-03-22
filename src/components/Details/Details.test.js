@@ -5,7 +5,8 @@ import Details from './Details'
 it('renders without crashing', () => {
   const company = {
     id: 0,
-    name: 'Test'
+    name: 'Test',
+    followers: []
   }
   const div = document.createElement('div')
   ReactDOM.render(
