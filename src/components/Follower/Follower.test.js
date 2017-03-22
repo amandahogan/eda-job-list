@@ -1,14 +1,14 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import Followers from './Followers'
+import Follower from './Follower'
 
 const avatar = ''
 
-describe('<Followers />', () => {
+describe('<Follower />', () => {
   it('matches snapshot', () => {
     expect(
-      shallow(<Followers avatar={avatar} />).getNode()
+      shallow(<Follower avatar={avatar} />).getNode()
     ).toMatchSnapshot()
   })
 })

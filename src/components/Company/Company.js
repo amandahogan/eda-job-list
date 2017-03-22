@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Card } from 'semantic-ui-react'
 
-import Followers from '../Followers'
+import Follower from '../Follower'
 import Tags from '../Tag'
 import './Company.css'
 
@@ -48,7 +48,7 @@ class Company extends Component {
             {this.props.company.followers
               .map((follower, index) => {
                 return (
-                  <Followers
+                  <Follower
                     avatar={follower.avatar}
                     key={index}
                   />
